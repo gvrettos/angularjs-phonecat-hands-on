@@ -1,11 +1,16 @@
-// Cfr
-// https://scotch.io/@arctic_sniper/angularjs-from-scratch-part-i
-// https://github.com/angular/angular-seed
+var phonecatApp = angular.module('phonecatApp', []);
 
-angular.module("App", ['main']);
-
-angular.module("main", []);
-
-angular.module("main").controller("mainController", function($scope) {
-    $scope.itWorks = 'AngularJS works!';
+phonecatApp.controller("PhoneListController", function($scope) {
+    $scope.phones = [
+        {
+          name: 'Nexus S',
+          snippet: 'Fast just got faster with Nexus S.'
+        }, {
+          name: 'Motorola XOOM™ with Wi-Fi',
+          snippet: 'The Next, Next Generation tablet.'
+        }, {
+          name: 'MOTOROLA XOOM™',
+          snippet: 'The Next, Next Generation tablet.'
+        }
+      ];
 });
