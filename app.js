@@ -1,3 +1,5 @@
+// npm install karma karma-jasmine jasmine-core karma-chrome-launcher --save-dev
+
 var phonecatApp = angular.module('phonecatApp', []);
 
 phonecatApp.controller("PhoneListController", function($scope) {
