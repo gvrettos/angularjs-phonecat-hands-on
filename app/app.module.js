@@ -1,4 +1,6 @@
 // npm install karma karma-jasmine jasmine-core karma-chrome-launcher --save-dev
 
 // Define the 'phonecatApp' module
-angular.module('phonecatApp', []);
+angular.module('phonecatApp', [
+    'phoneList'
+]);

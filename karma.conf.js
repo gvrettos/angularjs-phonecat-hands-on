@@ -17,11 +17,8 @@ module.exports = function(config) {
     files: [
       '../node_modules/angular/angular.js',
       '../node_modules/angular-mocks/angular-mocks.js',
-      //'app.js',
-      //'phone-list.component.js',
-      //'phone-list.component.spec.js',
-      '**/*.js'
-      //'**/*.spec.js'
+      '**/*.module.js',
+      '!(lib)/**/*!(.module|.spec).js',
     ],
 
 
