@@ -1,5 +1,7 @@
+Search: <input ng-model="$ctrl.query" />
+
 <ul>
-    <li ng-repeat="phone in $ctrl.phones">
+    <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query">
         <span>{{ phone.name }}</span>
         <p>{{ phone.snippet }}</p>
     </li>
