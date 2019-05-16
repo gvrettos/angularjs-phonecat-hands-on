@@ -1,9 +1,14 @@
 describe('PhoneCat Application', function() {
 
-    describe('phoneList', function() {
+    it('should redirect `app` to `app/#!/phones`', function() {
+        browser.get('app');
+        expect(browser.getCurrentUrl()).toContain('app/#!/phones');
+    });
+
+    describe('View: Phone list', function() {
 
         beforeEach(function() {
-            browser.get('app');
+            browser.get('app/#!/phones');
         });
 
         it('should filter the phone list as a user types into the search box', function() {
@@ -56,6 +61,16 @@ describe('PhoneCat Application', function() {
             expect(browser.getCurrentUrl()).toContain('#!/phones/nexus-s');
         });
         
+    });
+
+    describe('View: Phone details', function() {
+        beforeEach(function() {
+            browser.get('app/#!/phones/nexus-s');
+        });
+
+        it('should display placeholder page with `phoneId`', function() {
+            expect(element(by.binding('$ctrl.phoneId')).getText()).toBe('nexus-s');
+        });
     });
 
 });

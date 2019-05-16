@@ -5,12 +5,19 @@
         <title>Phone Cat angularjs app</title>
         <link rel="stylesheet" href="../node_modules/boostrap/dist/css/bootstrap.css">
         <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+        <script type="text/javascript" src="../node_modules/angular-route/angular-route.js"></script>
         <script type="text/javascript" src="./app.module.js"></script>
+        <script type="text/javascript" src="./app.config.js"></script>
+
         <script type="text/javascript" src="./phone-list/phone-list.module.js"></script>
         <script type="text/javascript" src="./phone-list/phone-list.component.js"></script>
+        <script type="text/javascript" src="./phone-detail/phone-detail.module.js"></script>
+        <script type="text/javascript" src="./phone-detail/phone-detail.component.js"></script>
     </head>
     
-    <!-- Use the custom component `phoneList` to render a list of phones -->
-    <phone-list></phone-list>
+    <body>
+        <!-- Placeholder (layout template) that holds the view template for the current route -->
+        <div ng-view></div>
+    </body>
 
 </html>

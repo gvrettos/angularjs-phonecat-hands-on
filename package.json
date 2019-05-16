@@ -11,16 +11,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.11.1",
-    "karma-cli": "^2.0.0",
+    "angular": "^1.7.8",
+    "angular-route": "^1.7.8",
     "bootstrap": "^3.4.1"
   },
   "devDependencies": {
-    "angular": "^1.7.8",
+    "http-server": "^0.11.1",
     "angular-mocks": "^1.7.8",
-    "angular-ui-router": "^1.0.22",
     "jasmine-core": "^3.4.0",
     "karma": "^4.1.0",
+    "karma-cli": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "^2.0.1",
