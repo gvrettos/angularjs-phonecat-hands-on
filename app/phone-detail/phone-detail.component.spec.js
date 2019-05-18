@@ -6,6 +6,10 @@ describe('phoneDetail', function() {
     // Test the controller
     describe('PhoneDetailController', function() {
         var $httpBackend, ctrl;
+        var xyzPhoneData = {
+            name: 'phone xyz',
+            images: ['image/url1.png', 'image/url2.png']
+        };
 
         // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
         // This allows us to inject a service and assign it to a variable with the same name
@@ -15,10 +19,10 @@ describe('phoneDetail', function() {
             // train the $httpBackend service to expect an incoming HTTP request 
             // and what the response will be
             $httpBackend.expectGET('phones/xyz.json')
-                        .respond({name: 'phone xyz'});
+                        .respond(xyzPhoneData);
 
             $routeParams.phoneId = 'xyz';
-                        
+            
             ctrl = $componentController('phoneDetail');
         }));
         
@@ -27,7 +31,7 @@ describe('phoneDetail', function() {
 
             // the responses are not returned until we call flush()
             $httpBackend.flush();
-            expect(ctrl.phone).toEqual({name: 'phone xyz'});
+            expect(ctrl.phone).toEqual(xyzPhoneData);
         });
     });
 });
