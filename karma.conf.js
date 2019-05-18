@@ -19,8 +19,8 @@ module.exports = function(config) {
       '../node_modules/angular-route/angular-route.js',
       // angular-mocks provides module(), inject() helper methods
       '../node_modules/angular-mocks/angular-mocks.js',
-      '**/*.module.js',
-      '!(lib)/**/*!(.module|.spec).js',
+      '**/**/*.module.js',
+      '!(lib)/**/*!(.module|.spec).js'
     ],
 
 
