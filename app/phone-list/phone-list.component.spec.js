@@ -21,11 +21,14 @@ describe('phoneList', function() {
                         ]);
                         
             ctrl = $componentController('phoneList');
+
+            // Override Jasmine's standard .toEqual() matcher.
+            // It will compare a Resource() object with a plain JS object and it will decide they respresent the same value.
+            // angular.equals ignores functions and $-prefixed properties, such as those added by the $resource service.
+            jasmine.addCustomEqualityTester(angular.equals);
         }));
         
         it('should create a `phones` model with 2 phones fetched with `$http`', function() {
-            expect(ctrl.phones).toBeUndefined();
-
             // the responses are not returned until we call flush()
             $httpBackend.flush();
             expect(ctrl.phones.length).toBe(2);

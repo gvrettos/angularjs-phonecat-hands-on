@@ -24,11 +24,14 @@ describe('phoneDetail', function() {
             $routeParams.phoneId = 'xyz';
             
             ctrl = $componentController('phoneDetail');
+
+            // Override Jasmine's standard .toEqual() matcher.
+            // It will compare a Resource() object with a plain JS object and it will decide they respresent the same value.
+            // angular.equals ignores functions and $-prefixed properties, such as those added by the $resource service.
+            jasmine.addCustomEqualityTester(angular.equals);
         }));
         
         it('should fetch the phone details', function() {
-            expect(ctrl.phone).toBeUndefined();
-
             // the responses are not returned until we call flush()
             $httpBackend.flush();
             expect(ctrl.phone).toEqual(xyzPhoneData);
