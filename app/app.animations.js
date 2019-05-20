@@ -13,12 +13,12 @@ angular
                 .css({
                     display: 'block',
                     position: 'absolute',
-                    top: 500,
+                    top: -500,
                     left: 0
                 })
                 .animate({
                     top: 0
-                }, done);
+                }, 1000, done);
             
             return function animateInEnd(wasCanceled) {
                 if (wasCanceled) {
@@ -37,8 +37,8 @@ angular
                     left: 0
                 })
                 .animate({
-                    top: -500
-                }, done);
+                    top: 500
+                }, 1000, done);
 
             return function animateOutEnd(wasCanceled) {
                 if (wasCanceled) {
